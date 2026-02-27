@@ -76,31 +76,31 @@ xmlns="http://schemas.xmlsoap.org/wsdl/">
       <soap:operation soapAction="getSecretMessage"/>
       <input><soap:body use="encoded" namespace="urn:SecureService"
         encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-      <o><soap:body use="encoded" namespace="urn:SecureService"
-        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></o>
+      <output><soap:body use="encoded" namespace="urn:SecureService"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
     </operation>
 
     <operation name="getPublicMessage">
       <soap:operation soapAction="getPublicMessage"/>
       <input><soap:body use="encoded" namespace="urn:SecureService"
         encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-      <o><soap:body use="encoded" namespace="urn:SecureService"
-        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></o>
+      <output><soap:body use="encoded" namespace="urn:SecureService"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
     </operation>
 
     <operation name="getUserInfo">
       <soap:operation soapAction="getUserInfo"/>
       <input><soap:body use="encoded" namespace="urn:SecureService"
         encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
-      <o><soap:body use="encoded" namespace="urn:SecureService"
-        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></o>
+      <output><soap:body use="encoded" namespace="urn:SecureService"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
     </operation>
 
   </binding>
 
   <service name="SecureService">
     <port name="SecureServicePort" binding="tns:SecureServiceBinding">
-      <soap:address location="http://localhost:8080/soap_practicals/secure_service.php"/>
+      <soap:address location="http://localhost:8080/Soap_practicals/practical06/secure_service.php"/>
     </port>
   </service>
 
@@ -142,7 +142,7 @@ class SecureService {
 }
 
 $server = new SoapServer(
-    "http://localhost:8080/soap_practicals/secure_service.php?wsdl"
+    "http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl"
 );
 $server->setClass('SecureService');
 $server->handle();

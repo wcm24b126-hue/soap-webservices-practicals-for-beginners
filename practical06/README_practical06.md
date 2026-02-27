@@ -65,7 +65,7 @@ practical-06-soap-security/
 
 `secure_service.php` මේ folder ගා copy කරං:
 ```
-C:\xampp\htdocs\soap_practicals\
+C:\xampp\htdocs\Soap_practicals\practical06\
 ```
 
 ### Code Explain කරනවා:
@@ -117,7 +117,7 @@ public function getSecretMessage($username, $password) {
 
 Browser ගා:
 ```
-http://localhost:8080/soap_practicals/secure_client.php
+http://localhost:8080/Soap_practicals/practical06/secure_client.php
 ```
 
 **Expected Output:**
@@ -149,7 +149,7 @@ http://localhost:8080/soap_practicals/secure_client.php
 1. SOAP UI → **SOAP** button click කරං
 2. Fill කරං:
    - **Project Name:** `Security Project`
-   - **Initial WSDL:** `http://localhost:8080/soap_practicals/secure_service.php?wsdl`
+   - **Initial WSDL:** `http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl`
 3. **OK** click කරං ✅
 
 ### 5.2 - Public Method Test (No Auth)
@@ -178,6 +178,10 @@ XML ගා fill කරං:
 ```
 
 ### 5.4 - Secret Method - Wrong Password ❌
+```
+SecureServiceBinding → getSecretMessage → Request 1
+```
+XML ගා fill කරං:
 ```xml
 <username xsi:type="xsd:string">admin</username>
 <password xsi:type="xsd:string">wrongpass</password>
@@ -244,6 +248,23 @@ Client try-catch ගා SoapFault catch කරනවා
 | WSDL load නොවෙනවා | XAMPP Apache running ද check කරං |
 | Always unauthorized | Username: `admin` Password: `password123` use කරං |
 | Real world security | Real apps ගා database + hashed passwords use කරනවා |
+
+---
+
+## 🔒 Real-World Security Insights (වැදගත්!)
+
+Practical එකක් විදිහට මේක හොඳ වුණාට, **Real-world Application** එකකට මේ security මදි. ඒ ඇයි කියලා පහත කරුණු වලින් තේරුම් ගන්න පුළුවන්:
+
+1.  **Hardcoded Credentials 🚩**: මෙහි username/password code එකේම ලියා ඇත. සැබෑ app එකක මේවා **Database** එකක සුරක්ෂිතව තැබිය යුතුය.
+2.  **Plain-text Comparison 🔒**: අපි මෙහි පාවිච්චි කරන්නේ සරල string match එකක් පමණි. සැබෑ app එකක **Password Hashing (Bcrypt)** අනිවාර්යයෙන්ම තිබිය යුතුය.
+3.  **Credentials in Parameters 📨**: හැම method call එකකදීම password එක යවන්න සිදු වේ. ඒ වෙනුවට **Token-based (JWT)** හෝ **Sessions** භාවිතා කිරීම වඩාත් ආරක්ෂිතයි.
+4.  **No Encryption (HTTP) 🌐**: Localhost එකේදී HTTP පාවිච්චි වුවත්, real server එකකදී දත්ත ආරක්ෂා කරගැනීමට **HTTPS (SSL/TLS)** අනිවාර්ය වේ.
+
+### සැබෑ System එකකට දානවා නම් කළ යුතු වෙනස්කම්:
+*   **Database Integration**: `checkAuth()` එකෙන් database query එකක් කරලා බලන්න ඕනි.
+*   **Password Verify**: `password_verify()` function එක පාවිච්චි කරන්න ඕනි.
+*   **WS-Security**: SOAP Headers පාවිච්චි කරලා credentials යවන්න ඕනි.
+*   **Laravel Auth**: පුළුවන් නම් Laravel වැනි framework එකක තියෙන built-in security පද්ධති පාවිච්චි කරන්න.
 
 ---
 

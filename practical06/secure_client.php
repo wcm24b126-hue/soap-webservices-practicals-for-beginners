@@ -3,10 +3,7 @@
 // Practical 06 - SOAP Security Client
 // ============================================================
 
-$client = new SoapClient(null, [
-    'location' => "http://localhost:8080/soap_practicals/secure_service.php",
-    'uri'      => "http://localhost:8080/soap_practicals/secure_service.php",
-]);
+$client = new SoapClient("http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl");
 
 echo "<h2>Practical 06 - SOAP Security Test Results 🔐</h2>";
 echo "<hr>";
