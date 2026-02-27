@@ -84,7 +84,7 @@ xmlns="http://schemas.xmlsoap.org/wsdl/">
 
   <service name="StudentService">
     <port name="StudentServicePort" binding="tns:StudentServiceBinding">
-      <soap:address location="http://localhost:8080/soap_practicals/practical02/student_service.php"/>
+      <soap:address location="http://localhost:8080/soap_practicals/P02 - Student Management/student_service.php"/>
     </port>
   </service>
 
@@ -112,7 +112,7 @@ return "Student not found.";
 }
 
 $server = new SoapServer(
-    "http://localhost:8080/soap_practicals/practical02/student_service.php?wsdl"
+    "http://localhost:8080/soap_practicals/P02 - Student Management/student_service.php?wsdl"
 );
 $server->setClass('StudentService');
 $server->handle();

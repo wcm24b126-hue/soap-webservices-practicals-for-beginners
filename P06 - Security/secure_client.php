@@ -3,7 +3,7 @@
 // Practical 06 - SOAP Security Client
 // ============================================================
 
-$client = new SoapClient("http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl");
+$client = new SoapClient("http://localhost:8080/Soap_practicals/P06 - Security/secure_service.php?wsdl");
 
 echo "<h2>Practical 06 - SOAP Security Test Results 🔐</h2>";
 echo "<hr>";
@@ -89,3 +89,4 @@ echo "<tr><td>Secret message</td><td>admin/wrongpass</td><td>❌ Unauthorized</t
 echo "<tr><td>Secret message</td><td>hacker/password123</td><td>❌ Unauthorized</td></tr>";
 echo "</table>";
 ?>
+

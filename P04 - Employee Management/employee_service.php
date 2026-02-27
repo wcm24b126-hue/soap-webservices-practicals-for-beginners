@@ -126,7 +126,7 @@ xmlns="http://schemas.xmlsoap.org/wsdl/">
 
   <service name="EmployeeService">
     <port name="EmployeeServicePort" binding="tns:EmployeeServiceBinding">
-      <soap:address location="http://localhost:8080/soap_practicals/practical04/employee_service.php"/>
+      <soap:address location="http://localhost:8080/soap_practicals/P04 - Employee Management/employee_service.php"/>
     </port>
   </service>
 
@@ -159,7 +159,7 @@ return "Employee updated successfully";
 return "Employee not found";
 }
 }
-$server = new SoapServer("http://localhost:8080/soap_practicals/practical04/employee_service.php?wsdl");
+$server = new SoapServer("http://localhost:8080/soap_practicals/P04 - Employee Management/employee_service.php?wsdl");
 
 $server->setClass('EmployeeService');
 $server->handle();

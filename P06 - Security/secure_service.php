@@ -100,7 +100,7 @@ xmlns="http://schemas.xmlsoap.org/wsdl/">
 
   <service name="SecureService">
     <port name="SecureServicePort" binding="tns:SecureServiceBinding">
-      <soap:address location="http://localhost:8080/Soap_practicals/practical06/secure_service.php"/>
+      <soap:address location="http://localhost:8080/Soap_practicals/P06 - Security/secure_service.php"/>
     </port>
   </service>
 
@@ -142,8 +142,9 @@ class SecureService {
 }
 
 $server = new SoapServer(
-    "http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl"
+    "http://localhost:8080/Soap_practicals/P06 - Security/secure_service.php?wsdl"
 );
 $server->setClass('SecureService');
 $server->handle();
 ?>
+

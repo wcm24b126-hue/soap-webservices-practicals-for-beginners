@@ -3,7 +3,7 @@
 // Practical 07 - Exception Handling Client
 // ============================================================
 
-$client = new SoapClient("http://localhost:8080/Soap_practicals/practical07/exception_service.php?wsdl");
+$client = new SoapClient("http://localhost:8080/Soap_practicals/P07 - Exception Handling/exception_service.php?wsdl");
 
 echo "<h2>Practical 07 - Exception Handling Test Results ⚠️</h2>";
 echo "<hr>";
@@ -166,3 +166,4 @@ echo "<tr><td><code>\$e->getMessage()</code></td><td>Main error message</td><td>
 echo "<tr><td><code>\$e->detail</code></td><td>Extra error details</td><td>Please provide non-zero divisor</td></tr>";
 echo "</table>";
 ?>
+

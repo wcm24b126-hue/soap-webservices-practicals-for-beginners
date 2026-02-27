@@ -106,7 +106,7 @@ xmlns="http://schemas.xmlsoap.org/wsdl/">
 
   <service name="CalculatorService">
     <port name="CalculatorServicePort" binding="tns:CalculatorServiceBinding">
-      <soap:address location="http://localhost:8080/soap_practicals/practical03/calculator_service.php"/>
+      <soap:address location="http://localhost:8080/soap_practicals/P03 - Calculator/calculator_service.php"/>
     </port>
   </service>
 
@@ -123,7 +123,7 @@ return $a / $b;
 }
 }
 $server = new SoapServer(null, ['uri' =>
-"http://localhost:8080/soap_practicals/practical03/calculator_service.php"]);
+"http://localhost:8080/soap_practicals/P03 - Calculator/calculator_service.php"]);
 $server->setClass('CalculatorService');
 $server->handle();
 ?>

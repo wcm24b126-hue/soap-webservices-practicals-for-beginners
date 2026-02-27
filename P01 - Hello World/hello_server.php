@@ -33,7 +33,7 @@ encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
 </binding>
 <service name="HelloService">
 <port name="HelloServicePort" binding="tns:HelloServiceBinding">
-<soap:address location="http://localhost:8080/soap_practicals/practical01/hello_server.php"/>
+<soap:address location="http://localhost:8080/soap_practicals/P01 - Hello World/hello_server.php"/>
 </port>
 </service>
 </definitions>';
@@ -44,7 +44,7 @@ public function sayHello($name) {
 return "Hello, " . $name . "!";
 }
 }
-$server = new SoapServer("http://localhost:8080/soap_practicals/practical01/hello_server.php?wsdl");
+$server = new SoapServer("http://localhost:8080/soap_practicals/P01 - Hello World/hello_server.php?wsdl");
 $server->setClass('HelloService');
 $server->handle();
 ?>

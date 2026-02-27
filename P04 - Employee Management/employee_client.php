@@ -1,6 +1,6 @@
 <?php
 // Initialize in WSDL mode
-$client = new SoapClient("http://localhost:8080/soap_practicals/practical04/employee_service.php?wsdl");
+$client = new SoapClient("http://localhost:8080/soap_practicals/P04 - Employee Management/employee_service.php?wsdl");
 
 $emp = new stdClass();
 $emp->id = 1; 

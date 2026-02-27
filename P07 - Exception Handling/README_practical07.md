@@ -61,7 +61,7 @@ practical-07-exception-handling/
 
 `exception_service.php` + `exception_client.php` මේ folder ගා copy කරං:
 ```
-C:\xampp\htdocs\Soap_practicals\practical07\
+C:\xampp\htdocs\Soap_practicals\P07 - Exception Handling\
 ```
 
 ### Code Explain කරනවා:
@@ -111,7 +111,7 @@ public function transferMoney($from, $to, $amount) {
 ## 🌐 Step 3: Browser ගා Test කරනවා
 
 ```
-http://localhost:8080/Soap_practicals/practical07/exception_client.php
+http://localhost:8080/Soap_practicals/P07 - Exception Handling/exception_client.php
 ```
 
 **Expected Output:**
@@ -144,7 +144,7 @@ Section 4: Money Transfer
 
 ### New Project:
 - **Project Name:** `Exception Project`
-- **WSDL:** `http://localhost:8080/Soap_practicals/practical07/exception_service.php?wsdl`
+- **WSDL:** `http://localhost:8080/Soap_practicals/P07 - Exception Handling/exception_service.php?wsdl`
 
 ### divide - Zero Test:
 ```xml
@@ -244,3 +244,4 @@ Client try-catch ගා:
 ---
 
 *Self Study Practical 07 - SOAP Web Services using PHP & XAMPP* 🧼
+

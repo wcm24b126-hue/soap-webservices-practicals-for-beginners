@@ -65,7 +65,7 @@ practical-06-soap-security/
 
 `secure_service.php` මේ folder ගා copy කරං:
 ```
-C:\xampp\htdocs\Soap_practicals\practical06\
+C:\xampp\htdocs\Soap_practicals\P06 - Security\
 ```
 
 ### Code Explain කරනවා:
@@ -117,7 +117,7 @@ public function getSecretMessage($username, $password) {
 
 Browser ගා:
 ```
-http://localhost:8080/Soap_practicals/practical06/secure_client.php
+http://localhost:8080/Soap_practicals/P06 - Security/secure_client.php
 ```
 
 **Expected Output:**
@@ -149,7 +149,7 @@ http://localhost:8080/Soap_practicals/practical06/secure_client.php
 1. SOAP UI → **SOAP** button click කරං
 2. Fill කරං:
    - **Project Name:** `Security Project`
-   - **Initial WSDL:** `http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl`
+   - **Initial WSDL:** `http://localhost:8080/Soap_practicals/P06 - Security/secure_service.php?wsdl`
 3. **OK** click කරං ✅
 
 ### 5.2 - Public Method Test (No Auth)

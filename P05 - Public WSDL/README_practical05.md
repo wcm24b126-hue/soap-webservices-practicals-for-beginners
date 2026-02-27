@@ -266,10 +266,11 @@ Result (15) return වෙනවා ✅
     *(මතක තියාගන්න: මෙතනදී Server එක තියෙන්නේ Internet එකේ. ඒ නිසා localhost පාවිච්චි කරන්නේ නෑ).*
 
 2.  **Browser එකේදී:** පාවිච්චි කරන්න ඔයාගේ **Local PHP Client** එක:
-    👉 `http://localhost:8080/soap_practicals/practical05/public_wsdl_client.php`
+    👉 `http://localhost:8080/soap_practicals/P05 - Public WSDL/public_wsdl_client.php`
     *(මෙතනදී ඔයා ලියපු PHP code එක run වෙලා internet එකේ තියෙන service එකට කතා කරනවා).*
 
 ---
 
 *Self Study Practical 05 - SOAP Web Services using PHP & XAMPP* 🧼
+
 
