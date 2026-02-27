@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="12872c94-041d-4bb6-9d77-493053a42264" activeEnvironment="Default" name="widihata update kala" resourceRoot="${projectDir}" soapui-version="5.9.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ec97dec3-8ec9-479c-b56c-bcc2e8dea4bf" wsaVersion="NONE" name="SecureServiceBinding" type="wsdl" bindingName="{urn:SecureService}SecureServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl"><con:part><con:url>http://localhost:8080/Soap_practicals/practical06/secure_service.php?wsdl</con:url><con:content><![CDATA[<definitions name="SecureService" targetNamespace="urn:SecureService" xmlns:tns="urn:SecureService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <!--getSecretMessage messages-->
+  <message name="getSecretMessageRequest">
+    <part name="username" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>
+  <message name="getSecretMessageResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <!--getPublicMessage messages (no auth needed)-->
+  <message name="getPublicMessageRequest"/>
+  <message name="getPublicMessageResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <!--getUserInfo messages-->
+  <message name="getUserInfoRequest">
+    <part name="username" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>
+  <message name="getUserInfoResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <portType name="SecureServicePortType">
+    <operation name="getSecretMessage">
+      <input message="tns:getSecretMessageRequest"/>
+      <output message="tns:getSecretMessageResponse"/>
+    </operation>
+    <operation name="getPublicMessage">
+      <input message="tns:getPublicMessageRequest"/>
+      <output message="tns:getPublicMessageResponse"/>
+    </operation>
+    <operation name="getUserInfo">
+      <input message="tns:getUserInfoRequest"/>
+      <output message="tns:getUserInfoResponse"/>
+    </operation>
+  </portType>
+  <binding name="SecureServiceBinding" type="tns:SecureServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getSecretMessage">
+      <soap:operation soapAction="getSecretMessage"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:SecureService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:SecureService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="getPublicMessage">
+      <soap:operation soapAction="getPublicMessage"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:SecureService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:SecureService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="getUserInfo">
+      <soap:operation soapAction="getUserInfo"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:SecureService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:SecureService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SecureService">
+    <port name="SecureServicePort" binding="tns:SecureServiceBinding">
+      <soap:address location="http://localhost:8080/Soap_practicals/practical06/secure_service.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/Soap_practicals/practical06/secure_service.php</con:endpoint></con:endpoints><con:operation id="23fd2abd-9b9c-4528-9952-6f071e87a012" isOneWay="false" action="getPublicMessage" name="getPublicMessage" bindingOperationName="getPublicMessage" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="80953d93-ced2-4970-a2d0-42d12168cc76" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Soap_practicals/practical06/secure_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:SecureService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:getPublicMessage soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getPublicMessage"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0ff7e85a-66ff-4886-99a1-5650668d52b6" isOneWay="false" action="getSecretMessage" name="getSecretMessage" bindingOperationName="getSecretMessage" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="04d0f60c-d6f2-4ab6-b6be-c9c928478b72" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Soap_practicals/practical06/secure_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:SecureService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:getSecretMessage soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <username xsi:type="xsd:string">admin</username>\r
+         <password xsi:type="xsd:string">password123</password>\r
+      </urn:getSecretMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getSecretMessage"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="81acde80-ec03-4baf-a987-f85395384122" isOneWay="false" action="getUserInfo" name="getUserInfo" bindingOperationName="getUserInfo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a8e9e7e6-7bc6-41ed-a646-dc4ef4e35dc2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Soap_practicals/practical06/secure_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:SecureService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:getUserInfo soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <username xsi:type="xsd:string">?</username>\r
+         <password xsi:type="xsd:string">?</password>\r
+      </urn:getUserInfo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getUserInfo"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

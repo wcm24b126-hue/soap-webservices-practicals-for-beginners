@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8b189390-fa2f-4062-ad01-32b89fae1901" activeEnvironment="Default" name="exception_service" resourceRoot="${projectDir}" soapui-version="5.9.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3d92c930-fb74-480c-a0c0-762147d93002" wsaVersion="NONE" name="ExceptionServiceBinding" type="wsdl" bindingName="{urn:ExceptionService}ExceptionServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/Soap_practicals/practical07/exception_service.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/Soap_practicals/practical07/exception_service.php?wsdl"><con:part><con:url>http://localhost:8080/Soap_practicals/practical07/exception_service.php?wsdl</con:url><con:content><![CDATA[<definitions name="ExceptionService" targetNamespace="urn:ExceptionService" xmlns:tns="urn:ExceptionService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <!--divide messages-->
+  <message name="divideRequest">
+    <part name="a" type="xsd:int"/>
+    <part name="b" type="xsd:int"/>
+  </message>
+  <message name="divideResponse">
+    <part name="return" type="xsd:float"/>
+  </message>
+  <!--getStudent messages-->
+  <message name="getStudentRequest">
+    <part name="id" type="xsd:int"/>
+  </message>
+  <message name="getStudentResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <!--processAge messages-->
+  <message name="processAgeRequest">
+    <part name="age" type="xsd:int"/>
+  </message>
+  <message name="processAgeResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <!--transferMoney messages-->
+  <message name="transferMoneyRequest">
+    <part name="fromAccount" type="xsd:int"/>
+    <part name="toAccount" type="xsd:int"/>
+    <part name="amount" type="xsd:float"/>
+  </message>
+  <message name="transferMoneyResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <portType name="ExceptionServicePortType">
+    <operation name="divide">
+      <input message="tns:divideRequest"/>
+      <output message="tns:divideResponse"/>
+    </operation>
+    <operation name="getStudent">
+      <input message="tns:getStudentRequest"/>
+      <output message="tns:getStudentResponse"/>
+    </operation>
+    <operation name="processAge">
+      <input message="tns:processAgeRequest"/>
+      <output message="tns:processAgeResponse"/>
+    </operation>
+    <operation name="transferMoney">
+      <input message="tns:transferMoneyRequest"/>
+      <output message="tns:transferMoneyResponse"/>
+    </operation>
+  </portType>
+  <binding name="ExceptionServiceBinding" type="tns:ExceptionServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="divide">
+      <soap:operation soapAction="divide"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:ExceptionService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:ExceptionService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="getStudent">
+      <soap:operation soapAction="getStudent"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:ExceptionService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:ExceptionService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="processAge">
+      <soap:operation soapAction="processAge"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:ExceptionService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:ExceptionService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="transferMoney">
+      <soap:operation soapAction="transferMoney"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:ExceptionService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:ExceptionService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ExceptionService">
+    <port name="ExceptionServicePort" binding="tns:ExceptionServiceBinding">
+      <soap:address location="http://localhost:8080/Soap_practicals/practical07/exception_service.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/Soap_practicals/practical07/exception_service.php</con:endpoint></con:endpoints><con:operation id="dc1905a6-4679-4736-bd75-78f53aacdceb" isOneWay="false" action="divide" name="divide" bindingOperationName="divide" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="54eeda91-ed2d-4796-8183-1353acc44379" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Soap_practicals/practical07/exception_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ExceptionService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:divide soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <a xsi:type="xsd:int">10</a>\r
+         <b xsi:type="xsd:int">5</b>\r
+      </urn:divide>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="divide"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f2e21858-e995-4d88-aa39-145041587a56" isOneWay="false" action="getStudent" name="getStudent" bindingOperationName="getStudent" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8cdfad77-cffa-4ef5-b1b2-e0c7358c546b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Soap_practicals/practical07/exception_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ExceptionService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:getStudent soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <id xsi:type="xsd:int">2</id>\r
+      </urn:getStudent>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getStudent"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e8c8c923-9255-482d-a15f-dcee61cb9f94" isOneWay="false" action="processAge" name="processAge" bindingOperationName="processAge" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7aad9ccb-dd38-423f-9903-c3ce6f28e55b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Soap_practicals/practical07/exception_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ExceptionService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:processAge soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <age xsi:type="xsd:int">26</age>\r
+      </urn:processAge>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="processAge"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3d363895-0e6e-4c0a-afe3-5a5ab3bf5be3" isOneWay="false" action="transferMoney" name="transferMoney" bindingOperationName="transferMoney" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e467dc06-74ac-464f-990f-25a3d4eb9e46" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Soap_practicals/practical07/exception_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ExceptionService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:transferMoney soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <fromAccount xsi:type="xsd:int">101</fromAccount>\r
+         <toAccount xsi:type="xsd:int">103</toAccount>\r
+         <amount xsi:type="xsd:float">1000</amount>\r
+      </urn:transferMoney>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="transferMoney"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

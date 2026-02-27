@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="32a293f6-05ac-4901-823f-5c632eab9b4d" activeEnvironment="Default" name="soap" resourceRoot="${projectDir}" soapui-version="5.9.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a34cb261-8600-4be4-adc9-59c2246547c7" wsaVersion="NONE" name="HelloServiceBinding" type="wsdl" bindingName="{urn:HelloService}HelloServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/soap_practicals/hello_server.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/soap_practicals/hello_server.php?wsdl"><con:part><con:url>http://localhost:8080/soap_practicals/hello_server.php?wsdl</con:url><con:content><![CDATA[<definitions name="HelloService" targetNamespace="urn:HelloService" xmlns:tns="urn:HelloService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <message name="sayHelloRequest">
+    <part name="name" type="xsd:string"/>
+  </message>
+  <message name="sayHelloResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <portType name="HelloServicePortType">
+    <operation name="sayHello">
+      <input message="tns:sayHelloRequest"/>
+      <output message="tns:sayHelloResponse"/>
+    </operation>
+  </portType>
+  <binding name="HelloServiceBinding" type="tns:HelloServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="sayHello">
+      <soap:operation soapAction="sayHello"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:HelloService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:HelloService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="HelloService">
+    <port name="HelloServicePort" binding="tns:HelloServiceBinding">
+      <soap:address location="http://localhost:8080/soap_practicals/hello_server.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/soap_practicals/hello_server.php</con:endpoint></con:endpoints><con:operation id="b6e10e3b-8507-4612-b0b7-3153de537b60" isOneWay="false" action="sayHello" name="sayHello" bindingOperationName="sayHello" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="005719e2-414c-4182-8b75-3f32f9606506" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap_practicals/practical01/hello_server.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:HelloService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:sayHello soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <name xsi:type="xsd:string">Shan</name>\r
+      </urn:sayHello>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="sayHello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

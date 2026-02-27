@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a47e1048-143f-4d49-9005-0962cbcc3124" activeEnvironment="Default" name="calculator_service" resourceRoot="${projectDir}" soapui-version="5.9.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="99e612d0-5314-494f-9168-639d4c6613af" wsaVersion="NONE" name="CalculatorServiceBinding" type="wsdl" bindingName="{urn:CalculatorService}CalculatorServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/soap_practicals/practical03/calculator_service.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/soap_practicals/practical03/calculator_service.php?wsdl"><con:part><con:url>http://localhost:8080/soap_practicals/practical03/calculator_service.php?wsdl</con:url><con:content><![CDATA[<definitions name="CalculatorService" targetNamespace="urn:CalculatorService" xmlns:tns="urn:CalculatorService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <!--add messages-->
+  <message name="addRequest">
+    <part name="a" type="xsd:int"/>
+    <part name="b" type="xsd:int"/>
+  </message>
+  <message name="addResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <!--subtract messages-->
+  <message name="subtractRequest">
+    <part name="a" type="xsd:int"/>
+    <part name="b" type="xsd:int"/>
+  </message>
+  <message name="subtractResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <!--multiply messages-->
+  <message name="multiplyRequest">
+    <part name="a" type="xsd:int"/>
+    <part name="b" type="xsd:int"/>
+  </message>
+  <message name="multiplyResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <!--divide messages-->
+  <message name="divideRequest">
+    <part name="a" type="xsd:int"/>
+    <part name="b" type="xsd:int"/>
+  </message>
+  <message name="divideResponse">
+    <part name="return" type="xsd:float"/>
+  </message>
+  <portType name="CalculatorServicePortType">
+    <operation name="add">
+      <input message="tns:addRequest"/>
+      <output message="tns:addResponse"/>
+    </operation>
+    <operation name="subtract">
+      <input message="tns:subtractRequest"/>
+      <output message="tns:subtractResponse"/>
+    </operation>
+    <operation name="multiply">
+      <input message="tns:multiplyRequest"/>
+      <output message="tns:multiplyResponse"/>
+    </operation>
+    <operation name="divide">
+      <input message="tns:divideRequest"/>
+      <output message="tns:divideResponse"/>
+    </operation>
+  </portType>
+  <binding name="CalculatorServiceBinding" type="tns:CalculatorServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="add">
+      <soap:operation soapAction="add"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:CalculatorService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:CalculatorService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="subtract">
+      <soap:operation soapAction="subtract"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:CalculatorService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:CalculatorService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="multiply">
+      <soap:operation soapAction="multiply"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:CalculatorService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:CalculatorService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="divide">
+      <soap:operation soapAction="divide"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:CalculatorService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:CalculatorService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CalculatorService">
+    <port name="CalculatorServicePort" binding="tns:CalculatorServiceBinding">
+      <soap:address location="http://localhost:8080/soap_practicals/practical03/calculator_service.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/soap_practicals/practical03/calculator_service.php</con:endpoint></con:endpoints><con:operation id="b4c90ae7-26f3-4973-b0c3-981b299748cc" isOneWay="false" action="add" name="add" bindingOperationName="add" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aa0eda49-cec5-4bc5-b9b4-d63eaeeb81db" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap_practicals/practical03/calculator_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:CalculatorService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:add soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <a xsi:type="xsd:int">?</a>\r
+         <b xsi:type="xsd:int">?</b>\r
+      </urn:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="add"/></con:call></con:operation><con:operation id="18285106-2e95-4756-b3df-4e8d4f197f56" isOneWay="false" action="divide" name="divide" bindingOperationName="divide" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4e775132-4373-43cf-80cd-9f627c49f4f8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap_practicals/practical03/calculator_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:CalculatorService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:divide soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <a xsi:type="xsd:int">?</a>\r
+         <b xsi:type="xsd:int">?</b>\r
+      </urn:divide>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="divide"/></con:call></con:operation><con:operation id="f821b1c4-5c34-4317-9bd3-fadc5c13ce8e" isOneWay="false" action="multiply" name="multiply" bindingOperationName="multiply" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f173c335-d567-41aa-b7a2-90e18b559649" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap_practicals/practical03/calculator_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:CalculatorService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:multiply soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <a xsi:type="xsd:int">?</a>\r
+         <b xsi:type="xsd:int">?</b>\r
+      </urn:multiply>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="multiply"/></con:call></con:operation><con:operation id="ddce2387-ee66-45ef-bf66-c899429d5d21" isOneWay="false" action="subtract" name="subtract" bindingOperationName="subtract" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="73c6f071-d61b-430e-aa60-0b01ec077728" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap_practicals/practical03/calculator_service.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:CalculatorService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:subtract soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <a xsi:type="xsd:int">?</a>\r
+         <b xsi:type="xsd:int">?</b>\r
+      </urn:subtract>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="subtract"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

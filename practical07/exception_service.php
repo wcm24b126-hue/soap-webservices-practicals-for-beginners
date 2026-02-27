@@ -108,7 +108,7 @@ xmlns="http://schemas.xmlsoap.org/wsdl/">
 
   <service name="ExceptionService">
     <port name="ExceptionServicePort" binding="tns:ExceptionServiceBinding">
-      <soap:address location="http://' . $_SERVER['HTTP_HOST'] . '/Soap_practicals/P07%20-%20Exception%20Handling/exception_service.php"/>
+      <soap:address location="http://' . $_SERVER['HTTP_HOST'] . '/Soap_practicals/practical07/exception_service.php"/>
     </port>
   </service>
 
@@ -258,9 +258,8 @@ class ExceptionService {
 }
 
 $server = new SoapServer(
-    "http://" . $_SERVER['HTTP_HOST'] . "/Soap_practicals/P07%20-%20Exception%20Handling/exception_service.php?wsdl"
+    "http://" . $_SERVER['HTTP_HOST'] . "/Soap_practicals/practical07/exception_service.php?wsdl"
 );
 $server->setClass('ExceptionService');
 $server->handle();
 ?>
-
